@@ -2,13 +2,11 @@ package com.aaronweggemans.mapadvisorapi.FuelStation;
 
 import com.aaronweggemans.mapadvisorapi.Coordinate.Coordinate;
 import com.aaronweggemans.mapadvisorapi.FuelStationPrice.FuelStationPrice;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "fuelstations")
@@ -33,3 +31,4 @@ public class FuelStation {
     @OneToMany(mappedBy = "station")
     private List<FuelStationPrice> prices;
 }
+

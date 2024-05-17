@@ -12,3 +12,6 @@
 # Local configuration files
 /application.properties
 /application.yml
+
+# Private configuration
+PRIVATE_README.md

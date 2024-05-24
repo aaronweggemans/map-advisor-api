@@ -1,7 +1,7 @@
-package com.aaronweggemans.mapadvisorapi.FuelStation;
+package com.aaronweggemans.mapadvisorapi.Domains.FuelStation;
 
-import com.aaronweggemans.mapadvisorapi.Coordinate.Coordinate;
-import com.aaronweggemans.mapadvisorapi.FuelStationPrice.FuelStationPrice;
+import com.aaronweggemans.mapadvisorapi.Domains.Coordinate.Coordinate;
+import com.aaronweggemans.mapadvisorapi.Domains.FuelStationPrice.FuelStationPrice;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

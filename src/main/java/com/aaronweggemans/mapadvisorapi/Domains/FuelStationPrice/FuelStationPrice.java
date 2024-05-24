@@ -1,4 +1,4 @@
-package com.aaronweggemans.mapadvisorapi.FuelStationPrice;
+package com.aaronweggemans.mapadvisorapi.Domains.FuelStationPrice;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.aaronweggemans.mapadvisorapi.FuelStationPrice;
+package com.aaronweggemans.mapadvisorapi.Domains.FuelStationPrice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

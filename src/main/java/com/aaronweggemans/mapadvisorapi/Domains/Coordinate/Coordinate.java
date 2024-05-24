@@ -1,4 +1,4 @@
-package com.aaronweggemans.mapadvisorapi.Coordinate;
+package com.aaronweggemans.mapadvisorapi.Domains.Coordinate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

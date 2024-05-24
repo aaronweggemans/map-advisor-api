@@ -11,6 +11,7 @@
 
 # Local configuration files
 /application.properties
+/src/main/resources/application.production.properties
 /application.yml
 
 # Private configuration

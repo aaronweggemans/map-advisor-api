@@ -1,4 +1,4 @@
-package com.aaronweggemans.mapadvisorapi.AverageFuelPrice;
+package com.aaronweggemans.mapadvisorapi.Domains.AverageFuelPrice;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

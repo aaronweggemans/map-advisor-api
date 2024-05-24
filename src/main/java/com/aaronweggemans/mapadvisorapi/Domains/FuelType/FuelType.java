@@ -1,4 +1,4 @@
-package com.aaronweggemans.mapadvisorapi.FuelType;
+package com.aaronweggemans.mapadvisorapi.Domains.FuelType;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

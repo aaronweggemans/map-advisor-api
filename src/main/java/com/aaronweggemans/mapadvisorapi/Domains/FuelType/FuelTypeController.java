@@ -1,4 +1,4 @@
-package com.aaronweggemans.mapadvisorapi.FuelType;
+package com.aaronweggemans.mapadvisorapi.Domains.FuelType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

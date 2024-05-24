@@ -1,6 +1,6 @@
-package com.aaronweggemans.mapadvisorapi.FuelStation;
+package com.aaronweggemans.mapadvisorapi.Domains.FuelStation;
 
-import com.aaronweggemans.mapadvisorapi.FuelStationPrice.FuelStationPrice;
+import com.aaronweggemans.mapadvisorapi.Domains.FuelStationPrice.FuelStationPrice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

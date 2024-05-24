@@ -1,4 +1,4 @@
-package com.aaronweggemans.mapadvisorapi.FuelStationPrice;
+package com.aaronweggemans.mapadvisorapi.Domains.FuelStationPrice;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

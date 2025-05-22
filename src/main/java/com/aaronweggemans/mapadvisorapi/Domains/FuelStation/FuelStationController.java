@@ -1,14 +1,11 @@
 package com.aaronweggemans.mapadvisorapi.Domains.FuelStation;
 
-import com.aaronweggemans.mapadvisorapi.Domains.FuelStationPrice.FuelStationPrice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/v1/fuel-stations")
@@ -22,30 +19,23 @@ public class FuelStationController {
 
     @GetMapping(path = "{fuelType}")
     public List<FuelStationSummary> getFuelStations(@PathVariable String fuelType) {
-        if(!fuelStationService.isExistingFuelType(fuelType)) {
+        if(!fuelStationService.doesFuelTypeExist(fuelType)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "You have sent a invalid fuel type.");
         }
 
-        return fuelStationService.getFuelStations().stream()
-                .map(fuelStation -> {
-                    Optional<FuelStationPrice> optionalPrice = fuelStation.getPrices().stream()
-                            .filter(prices -> prices.getFueltype().contains(fuelType))
-                            .findFirst();
+        return fuelStationService.getFuelStationsSummaryOnFuelType(fuelType);
+    }
 
-                    if (optionalPrice.isPresent()) {
-                        float price = optionalPrice.get().getPrice();
-                        return new FuelStationSummary(
-                                fuelStation.getId(),
-                                fuelStation.getLocation_lat(),
-                                fuelStation.getLocation_lon(),
-                                price
-                        );
-                    }
+    @PostMapping(path = "{fuelType}/coordinates")
+    public List<FuelStationSummary> getFuelStationsOnCoordinates(
+        @PathVariable String fuelType,
+        @RequestBody PolygonRequestDTO request
+    ) {
+        if(!fuelStationService.doesFuelTypeExist(fuelType)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "You have sent a invalid fuel type.");
+        }
 
-                    return null;
-                })
-                .filter(Objects::nonNull) // Filter out null elements
-                .toList();
+        return fuelStationService.findFuelstationsInPolygon(request, fuelType);
     }
 
     @GetMapping(path = "/find/{id}")

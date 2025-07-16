@@ -13,7 +13,7 @@ public class SecurityConfig {
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://aaronweggemans.local:4200", "http://aaronweggemans.local/", "http://localhost:4200"));
+        config.setAllowedOrigins(List.of("http://aaronweggemans.local:4200", "http://aaronweggemans.local/", "https://*.geolijn.nl/", "https://adviezen.geolijn.nl/", "http://localhost:4200"));
         config.setAllowedHeaders(List.of("ORIGIN", "Content-Type", "Authorization", "X-Requested-With", "Accept", "Cache-Control"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         config.setAllowCredentials(true);

@@ -35,6 +35,23 @@ Now, when you are in your docker container, you need to create your datbase. You
 CREATE DATABASE map_advisor_db;
 ```
 
+#### Run the spring boot application
+
+Now we can run the spring boot application. You can run the following commands to build and run the docker image of the spring boot application.
+
+```
+mvn spring-boot:run
+```
+
+#### Build for Raspberry
+
+Now we can run the spring boot application. You can run the following commands to build and run the docker image of the spring boot application.
+
+```
+docker build -t map-advisor-api .
+docker run -p 8080:8080 map-advisor-api
+```
+
 ### Import anwb information to the database
 
 Right now we have a working database with a connected API, but there is no usefull information in our database yet. So you can use the following docker image to import the information from the ANWB api and import it into your own local database.

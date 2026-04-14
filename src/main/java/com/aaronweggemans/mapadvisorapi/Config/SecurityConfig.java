@@ -10,12 +10,18 @@ import java.util.List;
 
 @Configuration
 public class SecurityConfig {
+    private final List<String> ACCEPTED_ORIGINS = List.of("https://adviezen.geolijn.nl/", "https://www.adviezen.geolijn.nl/", "http://localhost:4200");
+    private final List<String> ACCEPTED_HEADERS = List.of("Origin", "Content-Type", "Authorization", "X-Requested-With", "Accept", "Cache-Control");
+    private final List<String> ACCEPTED_METHODS = List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH");
+
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("https://*.geolijn.nl/", "https://adviezen.geolijn.nl/", "https://www.adviezen.geolijn.nl/", "http://localhost:4200"));
-        config.setAllowedHeaders(List.of("ORIGIN", "Content-Type", "Authorization", "X-Requested-With", "Accept", "Cache-Control"));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
+
+        config.setAllowedOrigins(this.ACCEPTED_ORIGINS);
+        config.setAllowedHeaders(this.ACCEPTED_HEADERS);
+        config.setAllowedMethods(this.ACCEPTED_METHODS);
+
         config.setAllowCredentials(true);
         config.setExposedHeaders(List.of("Authorization"));
 
